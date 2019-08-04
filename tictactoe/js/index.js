@@ -124,11 +124,11 @@ window.addEventListener("DOMContentLoaded", function () {
       }
 
       // Set visibility of the restart button
-      if(getAvailableMoves().length === 0
-          || (getWinner(GameBoard) === undefined && getAvailableMoves().length === 0)
+      if(getAvailableMoves(GameBoard).length === 0
+          || (getWinner(GameBoard) === undefined && getAvailableMoves(GameBoard).length === 0)
           || (getWinner(GameBoard) !== undefined)) {
          document.getElementById("play").style.visibility = "visible";
-      } else if(getAvailableMoves().length > 0 && getWinner(GameBoard) === undefined) {
+      } else if(getAvailableMoves(GameBoard).length > 0 && getWinner(GameBoard) === undefined) {
          document.getElementById("play").style.visibility = "hidden";
       }
 
@@ -137,7 +137,7 @@ window.addEventListener("DOMContentLoaded", function () {
          document.querySelector('.message.win-message').style.display = "block";
       } else if(getWinner(GameBoard) === 1) {
          document.querySelector('.message.lose-message').style.display = "block";
-      } else if(getAvailableMoves().length === 0) {
+      } else if(getAvailableMoves(GameBoard).length === 0) {
          document.querySelector('.message.draw-message').style.display = "block";
       }
    }

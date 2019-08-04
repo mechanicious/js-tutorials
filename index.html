@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tack Toe</title>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+</head>
+<body>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background: #e0e3ed;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, Lato, sans-serif;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .game {
+            width: 550px;
+            margin: 50px auto;
+            border-radius: 5px;
+            padding: 30px;
+            box-sizing: border-box;
+            background: #252a41;
+            -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+            -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+            box-shadow:0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .game table {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+        }
+
+        .game table td {
+            height: 33%;
+            width: 33%;
+        }
+
+        .game-controls {
+            width: 400px;
+            margin: auto;
+        }
+
+        .game table button {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .game table button.computer {
+            background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        }
+
+        .game table button.player {
+            background: linear-gradient(-15deg, #51d5b8 0%,#349fc6 50%,#423480 100%);
+        }
+
+        .game table button {
+            background: linear-gradient(to bottom, #f5f6f6 0%,#d7dce8 44%,#d7dce8 56%,#d7dce8 56%,#f5f6f6 100%);
+            outline: none;
+            border-radius: 5px;
+            font-size: 34px;
+        }
+
+        .game .game-controls button#play {
+            visibility: hidden;
+            background: linear-gradient(15deg, #a472d3 0%,#6f41bf 50%,#b97cd8 100%);
+            width: 400px;
+            height: 50px;
+            margin-top: 30px;
+            border-radius: 5px;
+            border: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 3px 5px #105068;
+        }
+
+        .game #title {
+            font-size: 24px;
+            color: #faeeeb;
+            text-align: center;
+            padding: 20px 0;
+            width: 400px;
+            margin: 0 auto 30px auto;
+            border-radius: 5px;
+            background: linear-gradient(to bottom, #f935a7 0%,#fb34a2 50%,#e7399d 100%);
+            text-shadow: 0 1px 3px #903624;
+        }
+
+        .game-messages .message {
+            margin: auto;
+            position: relative;
+            top: 200px
+        }
+
+        .win-message {
+            display: none;
+            background: linear-gradient(to bottom, #f8ffe8 0%,#e3f5ab 33%,#b7df2d 100%);
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px;
+            color: #fff;
+            box-shadow: 0 0 20px #2f3243;
+        }
+
+
+        .lose-message {
+            display: none;
+            background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px;
+            color: #fff;
+            box-shadow: 0 0 20px #2f3243;
+        }
+
+        .draw-message {
+            display: none;
+            background: linear-gradient(to bottom, #ffaf4b 0%,#ff920a 100%);;
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px;
+            color: #fff;
+            box-shadow: 0 0 20px #2f3243;
+        }
+
+        .game-messages {
+            position: relative;
+            height: 0;
+        }
+    </style>
+
+    <div class="game">
+        <div class="game-messages">
+            <div class="message jello animated win-message">
+                <h2>You win 👍</h2>
+            </div>
+
+            <div class="message jello animated lose-message">
+                <h2>You lose 😂</h2>
+            </div>
+
+            <div class="message jello animated draw-message">
+                <h2>It's a draw 😒</h2>
+            </div>
+        </div>
+
+        <h2 id="title">TIC TAC TOE</h2>
+
+        <table>
+            <tr>
+                <td><button id="1"></button></td>
+                <td><button id="2"></button></td>
+                <td><button id="3"></button></td>
+            </tr>
+            <tr>
+                <td><button id="4"></button></td>
+                <td><button id="5"></button></td>
+                <td><button id="6"></button></td>
+            </tr>
+            <tr>
+                <td><button id="7"></button></td>
+                <td><button id="8"></button></td>
+                <td><button id="9"></button></td>
+            </tr>
+        </table>
+
+        <div class="game-controls">
+            <button id="play" onclick="resetGame()">Reset</button>
+        </div>
+    </div>
+</body>
+</html>
